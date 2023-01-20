@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import AddUsers from "./components/Users/AddUsers";
 import UserList from "./components/Users/UserList";
+import Wrapper from "./components/Helpers/Wrapper";
 
 const DUMMY_USERS = [{
   id: '1',
@@ -13,10 +14,10 @@ const App = () => {
   const addUserHandler = (user) => {
     setUsers((prevState) => [user, ...prevState])
   }
-  return <div>
+  return <Wrapper>
     <AddUsers onAddUser={addUserHandler} />
     <UserList users={users}/>
-  </div>;
+  </Wrapper>;
 }
 
 export default App;
